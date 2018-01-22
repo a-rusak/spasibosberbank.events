@@ -1,0 +1,37 @@
+.c-help-nav {
+  font-size: @size-em-s;
+
+  @media @Tablet, @Phone-L, @Phone-S {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    list-style: none;
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    @media @Laptop {
+      padding-left: @size / 4;
+      padding-right: @size / 4;
+    }
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    color: @font-default-color;
+
+    &:hover {
+      text-decoration: none;
+      color: @brand-primary;
+    }
+  }
+
+}
