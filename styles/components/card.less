@@ -1,0 +1,44 @@
+@s-ri: c-card--round-image;
+
+.c-card {
+  display: flex;
+  margin: 0;
+
+  &&--full-height {
+    height: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-image {
+      .@{s-ri} & {
+        padding: 0 @size-xxs;
+      }
+    }
+    &-text {
+      .@{s-ri} & {
+      }
+    }
+  }
+
+  &__image {
+    .@{s-ri} & {
+      width: 100%;
+      padding-bottom: 100%;
+      border-radius: 50%;
+      .bg-cover();
+      .shadow(2);
+
+    }
+  }
+
+  &__title {
+    .@{s-ri} & {
+      text-align: center;
+      margin: @size-em 0;
+    }
+  }
+}

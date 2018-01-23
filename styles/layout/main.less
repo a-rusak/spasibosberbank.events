@@ -13,12 +13,17 @@
     &-bottom {
       width: 100%;
       padding-bottom: 0;
+      margin-bottom: -@size-xxs;
     }
   }
 
   &__section {
     padding-top: @size-em;
     padding-bottom: @size-em;
+    && {
+      font-size: @size-l;
+      line-height: 4/3;
+    }
 
     &&--bg-1 {
       background-color: #f7f5f0;
