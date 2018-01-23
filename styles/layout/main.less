@@ -1,2 +1,32 @@
 .l-main {
+
+  &__str {
+    &-header {
+      width: 100%;
+    }
+    &-left {
+      width: 50%;
+    }
+    &-right {
+      width: 50%;
+    }
+    &-bottom {
+      width: 100%;
+      padding-bottom: 0;
+    }
+  }
+
+  &__section {
+    padding-top: @size-em;
+    padding-bottom: @size-em;
+
+    &&--bg-1 {
+      background-color: #f7f5f0;
+    }
+    &&--bg-2 {
+      background: #f7f5f0 data-uri('../images/bg-2.png') center -61px;
+      border-bottom: 1px solid #ebe9e1;
+      border-top: 1px solid #ebe9e1;
+    }
+  }
 }
