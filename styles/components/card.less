@@ -1,4 +1,8 @@
-@s-ri: c-card--round-image;
+@s-round: c-card--round-image;
+@s-cover: c-card--cover-image;
+@s-advant: c-card--advantages;
+@s-icon: c-card--icon;
+@s-horz: c-card--horz;
 
 .c-card {
   display: flex;
@@ -8,37 +12,116 @@
     height: 100%;
   }
 
+  &&--advantages {
+  }
+
+  &&--cover-image {
+  }
+
+  &&--icon {}
+  &&--horz {}
+
   &__wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
 
+    .@{s-cover} & {
+      position: relative;
+    }
+    .@{s-advant} & {
+      padding-bottom: percentage(46/31);
+    }
+    .@{s-horz} & {
+      flex-direction: row;
+      align-items: center;
+    }
+
     &-image {
-      .@{s-ri} & {
+      .@{s-round} & {
         padding: 0 @size-xxs;
+      }
+      .@{s-advant} & {
+        // padding-bottom: percentage(46/31);
       }
     }
     &-text {
-      .@{s-ri} & {
+      .@{s-cover} & {
+        position: absolute;
+      }
+      .@{s-advant} & {
+        left: @size-xl;
+        right: @size-xl;
+        color: white;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .@{s-icon} & {
+        padding-left: @size-xxl;
       }
     }
   }
 
   &__image {
-    .@{s-ri} & {
+    .@{s-round} & {
       width: 100%;
       padding-bottom: 100%;
       border-radius: 50%;
       .bg-cover();
       .shadow(2);
-
+    }
+    .@{s-cover} & {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      .bg-cover();
+      border-radius: 4px;
+      background-position-x: left;
+    }
+    .@{s-icon} & {
+      border-radius: 50%;
+      border: 2px solid @brand-primary;
+      width: 80px;
+      display: block;
     }
   }
 
   &__title {
-    .@{s-ri} & {
+    .@{s-round} & {
       text-align: center;
       margin: @size-em 0;
+    }
+    .@{s-advant} & {
+      font-size: @size-xxl;
+      margin: 0;
+    }
+    .@{s-icon} & {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    font-size: @size-em-xs;
+    padding-left: @size-xl;
+    margin-bottom: @size-em-xxxl;
+
+    li {
+      margin-bottom: @size-em;
+    }
+  }
+
+  &__details {
+    .@{s-advant} & {
+      opacity: 0;
+      transform: scaleY(0);
+      position: absolute;
+      transition: transform .4s;
+      transform-origin: top center;
+    }
+    .@{s-advant}:hover & {
+      position: static;
+      opacity: 1;
+      transform: scaleY(1);
     }
   }
 }

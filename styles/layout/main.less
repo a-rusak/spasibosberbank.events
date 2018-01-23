@@ -1,5 +1,4 @@
 .l-main {
-
   &__str {
     &-header {
       width: 100%;
@@ -14,6 +13,15 @@
       width: 100%;
       padding-bottom: 0;
       margin-bottom: -@size-xxs;
+      display: flex;
+      justify-content: center;
+    }
+    &-pull-right {
+      margin-left: auto;
+    }
+    &-pad-right {
+      padding-right: @size-em * 5;
+      width: 50%;
     }
   }
 
@@ -32,6 +40,14 @@
       background: #f7f5f0 data-uri('../images/bg-2.png') center -61px;
       border-bottom: 1px solid #ebe9e1;
       border-top: 1px solid #ebe9e1;
+    }
+  }
+  &__app-buttons {
+    margin-top: @size-em * 2.5;
+    display: flex;
+
+    > a {
+      margin-right: @size-em;
     }
   }
 }

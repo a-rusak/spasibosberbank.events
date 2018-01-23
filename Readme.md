@@ -3,3 +3,5 @@
 `npm run start` - для разработки
 
 `npm run build` - для `production` сборки
+
+Если билд падает, удалить папку `\build`
