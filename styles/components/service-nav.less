@@ -12,6 +12,7 @@
     display: flex;
     margin: 0;
     padding: 0;
+
     @media @Tablet, @Phone-L, @Phone-S {
       display: block;
     }
@@ -25,7 +26,13 @@
     color: @white;
     display: flex;
     align-items: center;
-    padding: @size-em-xxxs @size-xxs;
+    //padding: @size-em-xxxs @size-xxs;
+    padding: 3px @size-xxs 0 0;
     min-height: @size-xl * 2;
+
+    img {
+      position: relative;
+      right: -3px; // pixel perfect
+    }
   }
 }

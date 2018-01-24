@@ -1,3 +1,5 @@
+@s-search-panel: c-mobile-search__panel;
+
 .l-header {
   background-color: @white;
 
@@ -91,7 +93,7 @@
       margin-left: auto;
 
       @media @4K, @Laptop-L {
-        padding-right: @size-em * 2;
+        padding-right: @size-em * 2.5;
       }
       @media @Tablet, @Phone-L, @Phone-S {
         order: 3;
@@ -128,6 +130,7 @@
     height: 78px;
     margin: 0;
     margin-left: -9px;
+    margin-top: -1px;
 
     img {
       .img-responsive();
@@ -150,9 +153,15 @@
     border-radius: 4px;
     font-weight: inherit;
     height: @size-em * 3.25;
+    position: relative; // pixel perfect
+    top: -2px;
+
+    &:focus {
+      border-color: @brand-primary;
+    }
 
     @media @4K, @Laptop-L {
-      width: @size-em * 15.5;
+      width: @size-em * 13.5;
     }
     @media @Laptop {
       width: @size-em * 11;
@@ -161,12 +170,20 @@
     &::placeholder {
       color: @brand-gray-regular;
     }
+
+    .@{s-search-panel} & {
+      flex-grow: 1;
+    }
   }
   &__search-button {
     border: none;
     width: @size-em * 3;
     margin-left: -@size-em * 3;
     background: transparent url('../img/icons/search.png') no-repeat center;
+    position: relative;
+    z-index: 1;
+    top: -2px;
+    outline: none;
   }
 
   &__menu-toggler {
@@ -210,6 +227,10 @@
     @media @4K, @Laptop-L, @Laptop {
       display: none;
     }
+    .@{s-search-panel} & {
+      right: @size-xxs;
+      top: @size-em-xxxl;
+    }
 
     &::before {
       content: '';
@@ -218,6 +239,10 @@
       position: absolute;
       background: @white;
       transform: rotate(45deg);
+
+      .@{s-search-panel} & {
+        background-color: @black-50;
+      }
     }
     &::after {
       content: '';
@@ -226,6 +251,10 @@
       height: 2px;
       background: @white;
       transform: rotate(45deg);
+
+      .@{s-search-panel} & {
+        background-color: @black-50;
+      }
     }
   }
 

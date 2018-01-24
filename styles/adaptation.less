@@ -32,6 +32,12 @@
 input[type="search"].l-header__search-field {
   height: auto;
   border: 1px solid @black-10;
+  padding: @size-s;
+
+  &:focus {
+    border-color: @brand-primary;
+  }
+
   @media @Laptop {
     width: @size-em * 10;
   }

@@ -8,6 +8,11 @@
     @media @Phone-S {
       display: block;
     }
+
+    .c-mobile-search__results & {
+      display: block;
+      text-align: center;
+    }
   }
 
   &&--scroll {
@@ -29,5 +34,9 @@
   &&--primary {
     background-color: @brand-primary;
     color: @white;
+  }
+  &&--border {
+    border: 1px solid @black-20;
+    color: @font-default-color;
   }
 }

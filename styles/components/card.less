@@ -2,6 +2,7 @@
 @s-cover: c-card--cover-image;
 @s-advant: c-card--advantages;
 @s-icon: c-card--icon;
+@s-image: c-card--image;
 @s-horz: c-card--horz;
 
 .c-card {
@@ -51,6 +52,8 @@
     }
     .@{s-horz} & {
       flex-direction: row;
+    }
+    .@{s-horz}.@{s-icon} & {
       align-items: center;
 
       @media @Phone-S {
@@ -73,6 +76,11 @@
       .@{s-advant} & {
         // padding-bottom: percentage(46/31);
       }
+      .@{s-image} & {
+        width: percentage(1/6);
+        max-width: @size * 4;
+        flex-shrink: 0;
+      }
     }
     &-text {
       .@{s-cover} & {
@@ -93,6 +101,9 @@
           margin-top: @size-em;
         }
       }
+      .@{s-image} & {
+        padding-left: @size-xxs;
+      }
     }
   }
 
@@ -103,6 +114,11 @@
       border-radius: 50%;
       .bg-cover();
       .shadow(2);
+    }
+    .@{s-image} & {
+      width: 100%;
+      padding-bottom: percentage(3/2);
+      .bg-cover();
     }
     .@{s-cover} & {
       position: absolute;
@@ -163,6 +179,11 @@
       position: static;
       opacity: 1;
       transform: scaleY(1);
+    }
+  }
+  &__date {
+    .@{s-image} & {
+      font-weight: @font-weight-semibold;
     }
   }
 }
