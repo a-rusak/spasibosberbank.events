@@ -1,13 +1,31 @@
 .l-main {
   &__str {
+    [id="sectionApp"] & {
+      align-items: center;
+    }
     &-header {
       width: 100%;
     }
     &-left {
       width: 50%;
+
+      @media @Phone-L, @Phone-S {
+        width: 100%;
+        [id="sectionAbout"] & {
+          order: 1;
+        }
+      }
     }
     &-right {
       width: 50%;
+
+      @media @Phone-L, @Phone-S {
+        width: 100%;
+
+        [id="sectionAbout"] & {
+          padding: @size-em @size * 3;
+        }
+      }
     }
     &-bottom {
       width: 100%;
@@ -18,19 +36,38 @@
     }
     &-pull-right {
       margin-left: auto;
+
+      @media @Tablet {
+        width: 50%;
+      }
     }
     &-pad-right {
-      padding-right: @size-em * 5;
       width: 50%;
+
+      @media @4K, @Laptop-L, @Laptop {
+        padding-right: @size-em * 5;
+      }
+
+      @media @Phone-L, @Phone-S {
+        width: 100%;
+      }
     }
   }
 
   &__section {
     padding-top: @size-em;
     padding-bottom: @size-em;
+
     && {
       font-size: @size-l;
       line-height: 4/3;
+
+      @media @Phone-S {
+        font-size: @size-s;
+      }
+      @media @Phone-L {
+        font-size: @size;
+      }
     }
 
     &&--bg-1 {
@@ -45,6 +82,11 @@
   &__app-buttons {
     margin-top: @size-em * 2.5;
     display: flex;
+    flex-wrap: wrap;
+
+    @media @Phone-L, @Phone-S {
+      justify-content: center;
+    }
 
     > a {
       margin-right: @size-em;

@@ -44,6 +44,20 @@
       .str-mix(5);
 
       // .border-mix(3);
+
+      .l-main__section &--4 {
+        @media @Tablet {
+          flex-basis: percentage(1/2);
+        }
+        @media @Phone-L, @Phone-S {
+          flex-basis: percentage(1);
+        }
+      }
+      .l-main__section &--3 {
+        @media @Tablet, @Phone-L, @Phone-S {
+          flex-basis: percentage(1);
+        }
+      }
     }
   }
 

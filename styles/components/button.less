@@ -4,6 +4,10 @@
     display: inline-flex;
     border-radius: 4px;
     padding: @size-em-xxs @size * 2;
+
+    @media @Phone-S {
+      display: block;
+    }
   }
 
   &&--scroll {
@@ -11,6 +15,10 @@
       .square(44px);
       display: flex;
       margin: auto;
+
+      @media @Phone-L, @Phone-S {
+        display: none;
+      }
     }
   }
 

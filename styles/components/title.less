@@ -10,10 +10,16 @@
     font-weight: @font-weight-light;
     .l-main__section & {
       font-size: @size * 2;
+
+      @media @Phone-L, @Phone-S {
+        font-size: @size-xxl;
+      }
     }
   }
 
   .l-main__str-pad-right & {
-    margin-top: @size-em * 2.5;
+    @media @4K, @Laptop-L, @Laptop, @Tablet {
+      margin-top: @size-em * 2.5;
+    }
   }
 }
