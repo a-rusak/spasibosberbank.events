@@ -1,8 +1,5 @@
 .l-main {
   &__str {
-    [id="sectionApp"] & {
-      align-items: center;
-    }
     &-header {
       width: 100%;
     }
@@ -30,8 +27,7 @@
     &-bottom {
       width: 100%;
       padding-bottom: 0;
-      margin-bottom: -@size-xxs;
-      display: flex;
+        display: flex;
       justify-content: center;
     }
     &-pull-right {
@@ -56,7 +52,6 @@
 
   &__section {
     padding-top: @size-em;
-    padding-bottom: @size-em;
 
     && {
       font-size: @size-l;
@@ -82,7 +77,6 @@
   &__app-buttons {
     margin-top: @size-em * 2.5;
     display: flex;
-    flex-wrap: wrap;
 
     @media @Phone-L, @Phone-S {
       justify-content: center;
@@ -90,6 +84,15 @@
 
     > a {
       margin-right: @size-em;
+
+      @media @4K, @Laptop-L, @Laptop {
+        width: 164px;
+        height: 50px;
+      }
+
+      img {
+        .img-responsive();
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   padding: @size-em-xs 0 0 0;
   background-color: @white;
   color: @brand-gray;
-  font-size: @size-em-s;
+  font-size: @size-s;
 
   a {
     color: @font-default-color;
@@ -18,6 +18,7 @@
       width: percentage(1/4);
       // min-width: @size-em * 14;
       flex-grow: 1;
+      padding-top: @size / 4;
 
       @media @Phablet {
         min-width: @size-em * 12;
@@ -29,14 +30,17 @@
     &-B {
       width: percentage(1/4);
       flex-grow: 1;
+      padding-top: @size-xs / 2;
     }
     &-C {
       width: percentage(1/4);
       flex-grow: 1;
+      padding-top: @size-xs / 2;
     }
     &-D {
       width: percentage(1/4);
       flex-grow: 1;
+      padding-top: @size-xs / 2;
 
       @media @Phone-L, @Phone-S {
         width: percentage(1);
@@ -53,7 +57,7 @@
         width: 100vw;
         margin-left: -50vw;
         left: 50%;
-        margin-top: -@size-em-xs;
+        margin-top: -@size-s;
       }
     }
     &-F {
@@ -67,7 +71,7 @@
   }
 
   &__bottom-content {
-    font-size: @size-em-s;
+    font-size: @size-em-xs;
   }
 
   &__social-content {
@@ -80,7 +84,7 @@
       }
 
       &:first-child {
-        margin-bottom: @size-em-xxxl;
+        margin-bottom: @size-xxxl;
 
         @media @Tablet, @Phone-L, @Phone-S {
           margin-bottom: @size-em;
@@ -95,7 +99,8 @@
     padding-left: @size-l;
     background: transparent url('../img/icons/phone.png') no-repeat -3px center;
     font-weight: @font-weight-semibold;
-    font-size: @size;
+    font-size: @size-em-l;
+    letter-spacing: 0.02em;
     white-space: nowrap;
   }
   &__list {
@@ -104,11 +109,42 @@
     list-style: none;
 
     li {
-      margin: 0 0 @size-em-l 0;
+      margin: 0 0 @size-em-xl 0;
     }
   }
 
   &__sber-logo {
     .img-responsive();
+  }
+  &__app-buttons {
+    display: flex;
+
+    @media @4K, @Laptop-L, @Laptop, @Tablet {
+      justify-content: flex-end;
+    }
+
+    @media @Tablet {
+      flex-wrap: wrap;
+    }
+
+    > a {
+      margin-left: @size-em;
+      &:not(:first-child) {
+      }
+
+      @media @4K, @Laptop-L, @Laptop {
+        width: 104px;
+        height: 32px;
+      }
+      @media @Tablet, @Phone-L, @Phone-S {
+        width: 102px;
+        height: 30px;
+        margin-bottom: 10px;
+      }
+
+      img {
+        .img-responsive();
+      }
+    }
   }
 }
