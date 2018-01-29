@@ -14,6 +14,8 @@
   }
 
   &&--advantages {
+    display: block;
+
     .l-grid__str-item--3:last-child & {
       @media @4K, @Laptop-L, @Laptop {
         position: relative;
@@ -64,12 +66,15 @@
 
       @media @Tablet, @Phone-L, @Phone-S {
         padding-bottom: percentage(1/3);
-
-        &:hover {
-          padding-bottom: percentage(4/3);
-        }
       }
     }
+    .@{s-advant}:hover &,
+    .@{s-advant}:focus & {
+      @media @Tablet, @Phone-L, @Phone-S {
+        padding-bottom: percentage(4/3);
+      }
+    }
+
     .@{s-horz} & {
       flex-direction: row;
     }
@@ -111,6 +116,7 @@
         right: @size-em-xxxs;
         padding-right: @size-xs;
         color: white;
+        overflow: hidden;
 
         @media @4K, @Laptop-L, @Laptop {
           top: 50%;
@@ -134,7 +140,9 @@
           }
         }
       }
-      .@{s-advant}:hover & {
+      .@{s-advant}:hover &,
+      .@{s-advant}:focus & {
+
         @media @4K, @Laptop-L, @Laptop {
           width: 200%;
           z-index: 1;
@@ -153,7 +161,8 @@
         }
       }
 
-      .l-grid__str-item--3:last-child .@{s-advant}:hover & {
+      .l-grid__str-item--3:last-child .@{s-advant}:hover &,
+      .l-grid__str-item--3:last-child .@{s-advant}:focus & {
         @media @4K, @Laptop-L, @Laptop {
           left: -100%;
         }
@@ -209,7 +218,8 @@
         background-size: 135%;
       }
     }
-    .@{s-advant}:hover & {
+    .@{s-advant}:hover &,
+    .@{s-advant}:focus & {
       @media @4K, @Laptop-L, @Laptop {
         width: calc(~"200% + 20px");
         z-index: 1;
@@ -249,6 +259,10 @@
     padding-left: @size-xl;
     margin-bottom: @size-em-xxxl;
 
+    .@{s-advant} & {
+      // pointer-events: none; // fix jump bug on hover while transition
+    }
+
     li {
       margin-bottom: @size-em;
     }
@@ -259,10 +273,11 @@
       opacity: 0;
       transform: scaleY(0);
       position: absolute;
-      transition: transform 0.4s;
+      transition: transform .4s, opacity .4s;
       transform-origin: top center;
     }
-    .@{s-advant}:hover & {
+    .@{s-advant}:hover &,
+    .@{s-advant}:focus & {
       position: static;
       opacity: 1;
       transform: scaleY(1);

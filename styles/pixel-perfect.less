@@ -86,8 +86,16 @@
 }
 
 .c-main-nav__root-link {
-  padding: 21px 0 18px 0;
+  @media @4K, @Laptop-L, @Laptop {
+    padding: 21px 0 18px 0;
+  }
 }
 .c-title.c-title--section {
   margin-top: -4px;
+}
+
+.l-header__str-E {
+  @media @4K, @Laptop-L, @Laptop {
+    margin-top: -7px; // pixel-perfect
+  }
 }
